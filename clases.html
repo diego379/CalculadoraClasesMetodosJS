@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de clases</title>
+</head>
+<body>
+    <h1>CLASES</h1>
+    <script>
+        class Usuario{
+            // Metodo constructor con parametros
+            constructor(nombre, edad, correo){
+                //propiedad    parametro
+                this.nombre = nombre;
+                this.edad = edad;
+                this.correo = correo;
+            }
+
+            // Metodo o funcion, pero cuando esta dentro de una clase se llama metodo
+            // Se coloca de una vez el nombre y los parametros, sin la palabra function
+            saludarUsuario(mensaje){
+                return mensaje;
+            }
+
+            mostrarInfo(){
+                return `
+                    <b>Nombre</b>: ${this.nombre} <br>
+                    <b>Edad</b>: ${this.edad} <br>
+                    <b>Correo</b>: ${this.correo}
+                    <hr> 
+                `;
+            }
+        }
+
+        const diego = new Usuario('Diego', 28, 'Diego@gmail.com');
+        document.write(diego.mostrarInfo());
+        //document.write(`${diego.nombre} tiene ${diego.edad} años <br> ${diego.saludarUsuario('Bienvenido')}`);
+        //console.log(diego.saludarUsuario('Bienvenido'));
+
+        class Estudiante extends Usuario{
+            // Para agregar otra propiedad y parametro tenemos que sobreescribir el constructor de la calse que estamos heredando, es este caso Usuario
+            // ademas de con la funcion super(), traemos los parametros de Usuario
+            // y los asignamos con this.propiedad = parametro, como esta en el ejemplo
+
+            constructor(nombre, edad, correo,carrera){
+                super(nombre, edad, correo);
+                this.carrera = carrera;
+            }
+
+            // Sobreescribimos el metodo mostrarInfo de la clase Usaurio, para mostrar el parametro includio = carrera
+            mostrarInfo(){
+                return `
+                    <b>Nombre</b>: ${this.nombre} <br>
+                    <b>Edad</b>: ${this.edad} <br>
+                    <b>Correo</b>: ${this.correo} <br>
+                    <b>Carrera</b>: ${this.carrera}
+                    <hr> 
+                `;
+            }
+
+        }
+        const ivan = new Estudiante('Ivan', 15, 'estudiante@a.cok','Ingenieria de software');
+        document.write(ivan.mostrarInfo());
+    </script>
+</body>
+</html>

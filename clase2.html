@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora JavaScript</h1>
+    <script>
+        // Funciones
+
+        /*
+        function Suma(a,b) {
+            let resultado = (parseInt(a) + parseInt(b))
+            return resultado;
+        }
+
+        let num1 = prompt("Primer numero");
+        let num2 = prompt("Segundo numero");
+        // console.log(Suma(55,44));
+        document.write(Suma(num1,num2)); */
+
+
+/* funcion con multiples parametros
+        function SumaVarios(...x) {
+
+            let suma = 0;
+            for (let i = 0; i < x.length; i++) {
+
+                suma += x[i];
+                
+            }
+            return suma;
+        }
+
+        document.write(SumaVarios(12,5,3,13));
+      
+        */
+        /*
+        // FUNCIONES FLECHA
+
+        // Funciones 
+
+        const nombres = ['Diego', 'Andres', 'Valbuena', 'Vanegas']; 
+
+        // Contar numero de letras uqe tiene cada palabra en el arreglo
+        //  La clase .map nos permite hacer esto
+        // Declaramos la funcion dentro de la variable como un parametro porque queremos que haga esto en cada objeto del arreglo}}
+
+        // FUNCION TRADICIONAL
+        // Definimos una variable en forma constante ya que no va a cambiar su estado
+        // const numeroCara = nombres.map(function(parametro){
+        //     // la clase map nos permite traer los objetos uno por uno, podemos imprimirlos y podemos contar la cantidad de caracteres con .length
+        //    document.write(`${parametro} tiene ${parametro.length} letras   <br>`);
+        // });
+           
+        // La funcion felcha se creo con el fin de simplificar la sintaxix de las funciones tradicionales  
+        
+        // FUNCION FLECHA
+
+        const numeroCara = nombres.map( parametro => `${parametro} tiene ${parametro.length} letras`);
+           
+         console.log(numeroCara); 
+         */
+        // let num = prompt('Ingrese un numero');
+        
+        // function Adivina(x) {
+        //     const adivina = 12;
+        //     if (x > adivina) {
+        //         alert('Mayor');
+        //         return x;
+        //     }
+        //     else{
+        //         alert('Menor');
+        //         return x;
+        //     }
+            
+        // }
+
+        // Adivina(num);
+
+        
+        let ejemplo = prompt("Ingrese un numero");
+        const num = x => {
+            const adivina = 12;
+            if (x > adivina) {
+                //document.write('Mayor');
+                return `mayor`;
+            }
+            else{
+                //document.write('Menor');
+                return `menor`;
+            }
+        };
+
+        console.log(num(ejemplo ));
+
+
+
+    </script>
+
+</body>
+</html>
